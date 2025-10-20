@@ -1,0 +1,25 @@
+[project]
+name = "raindrop-cleanup-agent"
+version = "0.1.0"
+description = "Autonomous agent to clean and organize Raindrop bookmarks using parallel Claude AI subagents"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=0.40.0",
+    "gradio>=4.0.0",
+    "rich>=13.0.0",
+    "pyyaml>=6.0",
+    "requests>=2.31.0",
+    "python-dotenv>=1.0.0",
+    "apscheduler>=3.10.0",
+]
+
+[project.scripts]
+raindrop-cleanup = "raindrop_cleanup.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/raindrop_cleanup"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
